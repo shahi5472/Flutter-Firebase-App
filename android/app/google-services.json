@@ -1,0 +1,127 @@
+{
+  "project_info": {
+    "project_number": "105570103367",
+    "firebase_url": "https://apply-board-8ba73.firebaseio.com",
+    "project_id": "apply-board-8ba73",
+    "storage_bucket": "apply-board-8ba73.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:105570103367:android:87ee1e0a16d57c7a8c0162",
+        "android_client_info": {
+          "package_name": "com.airportshuttles.application"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "105570103367-ciqjr15bceam5ofuheqs2arbdrhieed7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYnyyBDCLeM53DaG8tbzDexoD8n95YPkQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "105570103367-ciqjr15bceam5ofuheqs2arbdrhieed7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:105570103367:android:74949036a9c5f8f68c0162",
+        "android_client_info": {
+          "package_name": "com.s.m.shahi.flutterfirebaseapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "105570103367-ciqjr15bceam5ofuheqs2arbdrhieed7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYnyyBDCLeM53DaG8tbzDexoD8n95YPkQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "105570103367-ciqjr15bceam5ofuheqs2arbdrhieed7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:105570103367:android:3ba231ef7071d1538c0162",
+        "android_client_info": {
+          "package_name": "com.shahi.uberdriver"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "105570103367-ciqjr15bceam5ofuheqs2arbdrhieed7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYnyyBDCLeM53DaG8tbzDexoD8n95YPkQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "105570103367-ciqjr15bceam5ofuheqs2arbdrhieed7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:105570103367:android:a3d7059c624422658c0162",
+        "android_client_info": {
+          "package_name": "com.shahi.uberrider"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "105570103367-ciqjr15bceam5ofuheqs2arbdrhieed7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYnyyBDCLeM53DaG8tbzDexoD8n95YPkQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "105570103367-ciqjr15bceam5ofuheqs2arbdrhieed7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
