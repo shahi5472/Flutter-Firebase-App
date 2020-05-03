@@ -12,10 +12,12 @@ class Register extends StatefulWidget {
 
 class _RegisterState extends State<Register> {
   final AuthService _authService = AuthService();
+  final _fromState = GlobalKey<FormState>();
 
   String fullName = '';
   String email = '';
   String password = '';
+  String error = '';
 
   @override
   Widget build(BuildContext context) {
@@ -31,6 +33,7 @@ class _RegisterState extends State<Register> {
           child: Container(
             padding: EdgeInsets.symmetric(vertical: 20, horizontal: 50),
             child: Form(
+              key: _fromState,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
@@ -38,6 +41,8 @@ class _RegisterState extends State<Register> {
                     height: 20,
                   ),
                   TextFormField(
+                    validator: (value) =>
+                        value.isEmpty ? "Enter your full name" : null,
                     keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
                       fillColor: Colors.brown[100],
@@ -59,6 +64,8 @@ class _RegisterState extends State<Register> {
                     height: 20,
                   ),
                   TextFormField(
+                    validator: (value) =>
+                        value.isEmpty ? "Enter your an email" : null,
                     keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
                       fillColor: Colors.brown[100],
@@ -80,6 +87,8 @@ class _RegisterState extends State<Register> {
                     height: 20,
                   ),
                   TextFormField(
+                    validator: (value) =>
+                        value.isEmpty ? "Enter your password" : null,
                     keyboardType: TextInputType.visiblePassword,
                     decoration: InputDecoration(
                       fillColor: Colors.brown[100],
@@ -105,9 +114,22 @@ class _RegisterState extends State<Register> {
                     color: Colors.brown,
                     child: Text(
                       'Register',
-                      style: TextStyle(fontSize: 20, color: Colors.white),
+                      style: TextStyle(color: Colors.white),
                     ),
-                    onPressed: () async {},
+                    onPressed: () async {
+                      if (_fromState.currentState.validate()) {
+                        dynamic result = await _authService
+                            .registerWithEmailPassword(email, password);
+                        print(email);
+                        print(password);
+                        print(result.toString());
+                        if (result == null) {
+                          setState(() {
+                            error = 'Please check information is correct.';
+                          });
+                        }
+                      }
+                    },
                   ),
                   SizedBox(
                     height: 20,
@@ -116,7 +138,7 @@ class _RegisterState extends State<Register> {
                     color: Colors.brown,
                     child: Text(
                       'All ready have an account? Sign in',
-                      style: TextStyle(fontSize: 18, color: Colors.white),
+                      style: TextStyle(color: Colors.white),
                     ),
                     onPressed: () {
                       widget.toggleView();

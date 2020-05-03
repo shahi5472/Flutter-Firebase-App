@@ -12,6 +12,7 @@ class SignIn extends StatefulWidget {
 
 class _SignInState extends State<SignIn> {
   final AuthService _authService = AuthService();
+  final _fromState = GlobalKey<FormState>();
 
   String email = '';
   String password = '';
@@ -30,6 +31,7 @@ class _SignInState extends State<SignIn> {
           child: Container(
             padding: EdgeInsets.symmetric(vertical: 20, horizontal: 50),
             child: Form(
+              key: _fromState,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
@@ -37,6 +39,8 @@ class _SignInState extends State<SignIn> {
                     height: 20,
                   ),
                   TextFormField(
+                    validator: (value) =>
+                        value.isEmpty ? "Enter your email" : null,
                     keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
                       fillColor: Colors.brown[100],
@@ -58,6 +62,8 @@ class _SignInState extends State<SignIn> {
                     height: 20,
                   ),
                   TextFormField(
+                    validator: (value) =>
+                        value.isEmpty ? "Enter your password" : null,
                     keyboardType: TextInputType.visiblePassword,
                     decoration: InputDecoration(
                       fillColor: Colors.brown[100],
@@ -83,9 +89,14 @@ class _SignInState extends State<SignIn> {
                     color: Colors.brown,
                     child: Text(
                       'Log in',
-                      style: TextStyle(fontSize: 20, color: Colors.white),
+                      style: TextStyle(color: Colors.white),
                     ),
-                    onPressed: () async {},
+                    onPressed: () async {
+                      if (_fromState.currentState.validate()) {
+                        dynamic result = await _authService
+                            .signInWithEmailPassword(email, password);
+                      }
+                    },
                   ),
                   SizedBox(
                     height: 20,
@@ -94,10 +105,24 @@ class _SignInState extends State<SignIn> {
                     color: Colors.brown,
                     child: Text(
                       'Create a new account',
-                      style: TextStyle(fontSize: 20, color: Colors.white),
+                      style: TextStyle(color: Colors.white),
                     ),
                     onPressed: () {
                       widget.toggleView();
+                    },
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  RaisedButton(
+                    child: Text('Sign in Anonymous'),
+                    onPressed: () async {
+                      dynamic result = await _authService.signInAnon();
+                      if (result == null) {
+                        print('Error');
+                      } else {
+                        print('Login Ok');
+                      }
                     },
                   ),
                 ],
@@ -108,18 +133,4 @@ class _SignInState extends State<SignIn> {
       ),
     );
   }
-}
-
-Widget buttonWidget(AuthService _authService) {
-  return RaisedButton(
-    child: Text('Sign in Anonymous'),
-    onPressed: () async {
-      dynamic result = await _authService.signInAnon();
-      if (result == null) {
-        print('Error');
-      } else {
-        print('Login Ok');
-      }
-    },
-  );
 }
