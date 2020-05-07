@@ -17,6 +17,7 @@ class UserTile extends StatelessWidget {
           leading: CircleAvatar(
             radius: 25,
             backgroundColor: Colors.brown[user.strength],
+            backgroundImage: AssetImage('assets/coffee_icon.png'),
           ),
           title: Text(user.name),
           subtitle: Text('Take ${user.sugars} sugar(s)'),

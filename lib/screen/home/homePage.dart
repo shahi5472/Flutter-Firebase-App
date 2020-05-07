@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutterfirebaseapp/modal/user.dart';
 import 'package:flutterfirebaseapp/screen/home/settings_form.dart';
 import 'package:flutterfirebaseapp/screen/home/user_list.dart';
@@ -47,7 +48,15 @@ class HomePage extends StatelessWidget {
             ),
           ],
         ),
-        body: UserList(),
+        body: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              fit: BoxFit.cover,
+              image: AssetImage('assets/coffee_bg.png'),
+            ),
+          ),
+          child: UserList(),
+        ),
       ),
     );
   }
